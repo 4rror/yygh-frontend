@@ -51,7 +51,7 @@
   </div>
 </template>
 <script>
-import dict from "@/api/yygh/dict";
+import dict from "@/api/yygh/cmn";
 
 export default {
   data() {
