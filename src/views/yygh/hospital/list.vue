@@ -93,6 +93,13 @@
           >
             查看
           </el-button>
+          <el-button
+            @click="showHospitalSchedule(scope.row)"
+            type="text"
+            size="small"
+          >
+            排班
+          </el-button>
           <!--<el-button type="text" size="small">编辑</el-button>-->
         </template>
       </el-table-column>
@@ -182,6 +189,9 @@ export default {
     },
     showHospitalDetail(row) {
       router.push(`hospDetail/${row.id}`);
+    },
+    showHospitalSchedule(row) {
+      router.push(`/yygh/hospset/hospital/schedule/${row.hoscode}`);
     }
   }
 };

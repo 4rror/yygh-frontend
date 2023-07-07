@@ -21,5 +21,12 @@ export default {
       url: `${api_name}/show/${id}`,
       method: "get"
     });
+  },
+  //查看医院科室（第一个接口，根据医院编号查询科室列表）
+  getDeptByHoscode(hoscode) {
+    return request({
+      url: `/admin/hosp/department/getDeptList/${hoscode}`,
+      method: "get"
+    });
   }
 };

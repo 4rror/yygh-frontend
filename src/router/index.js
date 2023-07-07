@@ -57,6 +57,13 @@ export const constantRoutes = [
         component: () => import("@/views/yygh/hospital/show"),
         hidden: true,
         meta: { title: "医院详情", icon: "el-icon-house" }
+      },
+      {
+        path: "hospital/schedule/:hoscode",
+        name: "排班",
+        component: () => import("@/views/yygh/hospital/schedule"),
+        meta: { title: "排班", noCache: true },
+        hidden: true
       }
     ]
   },
