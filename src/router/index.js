@@ -84,6 +84,35 @@ export const constantRoutes = [
     ]
   },
   {
+    path: "/user",
+    component: Layout,
+    redirect: "/user/userInfo/list",
+    name: "userInfo",
+    meta: { title: "用户管理", icon: "table" },
+    alwaysShow: true,
+    children: [
+      {
+        path: "userInfo/list",
+        name: "用户列表",
+        component: () => import("@/views/yygh/user/list"),
+        meta: { title: "用户列表", icon: "table" }
+      },
+      {
+        path: "userInfo/authList",
+        name: "认证审批列表",
+        component: () => import("@/views/yygh/user/authList"),
+        meta: { title: "认证审批列表", icon: "table" }
+      },
+      {
+        path: "userInfo/show/:id",
+        name: "用户查看",
+        component: () => import("@/views/yygh/user/show"),
+        meta: { title: "用户查看" },
+        hidden: true
+      }
+    ]
+  },
+  {
     path: "/login",
     component: () => import("@/views/login/index"),
     hidden: true
@@ -93,28 +122,6 @@ export const constantRoutes = [
     path: "/404",
     component: () => import("@/views/404"),
     hidden: true
-  },
-
-  {
-    path: "/example",
-    component: Layout,
-    redirect: "/example/table",
-    name: "Example",
-    meta: { title: "Example", icon: "el-icon-s-help" },
-    children: [
-      {
-        path: "table",
-        name: "Table",
-        component: () => import("@/views/table/index"),
-        meta: { title: "Table", icon: "table" }
-      },
-      {
-        path: "tree",
-        name: "Tree",
-        component: () => import("@/views/tree/index"),
-        meta: { title: "Tree", icon: "tree" }
-      }
-    ]
   },
 
   // 404 page must be placed at the end !!!
